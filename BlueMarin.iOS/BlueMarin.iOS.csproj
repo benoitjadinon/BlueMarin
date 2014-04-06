@@ -36,12 +36,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\BlueMarin.Lib\BlueMarin.csproj">
-      <Project>{B7A248AF-C787-4F9D-BFAD-DF96C64F4E50}</Project>
-      <Name>BlueMarin</Name>
-    </ProjectReference>
+    <Compile Include="Helpers\TableSource.cs" />
   </ItemGroup>
 </Project>
