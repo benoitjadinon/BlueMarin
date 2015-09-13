@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B7A248AF-C787-4F9D-BFAD-DF96C64F4E50}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BlueMarin</RootNamespace>
+    <AssemblyName>BlueMarin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile158</TargetFrameworkProfile>
+    <ReleaseVersion>
+    </ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\Mapping\Mapper.cs" />
+    <Compile Include="Core\Enum\Symbol.cs" />
+    <Compile Include="Core\Enum\EnumValuesExtensions.cs" />
+    <Compile Include="Core\Enum\Enumeration.cs" />
+    <Compile Include="Core\LockWrapper.cs" />
+    <Compile Include="Core\Enum\IEnumerableExtensions.cs" />
+    <Compile Include="Core\Async\TaskWithTimeout.cs" />
+    <Compile Include="Core\Async\TaskExtensions.cs" />
+    <Compile Include="Core\Security\MD5Core.cs" />
+    <Compile Include="Core\MVVM\INotifyPropertyChangedExtensions.cs" />
+    <Compile Include="Core\ArrayExtensions.cs" />
+    <Compile Include="Core\DateTimeExtensions.cs" />
+    <Compile Include="Core\NumericExtensions.cs" />
+    <Compile Include="Core\StreamExtensions.cs" />
+    <Compile Include="Core\StringExtensions.cs" />
+    <Compile Include="Core\TypeExtensions.cs" />
+    <Compile Include="Core\GuidExtensions.cs" />
+    <Compile Include="Core\IntExtensions.cs" />
+    <Compile Include="Core\Maybe.cs" />
+    <Compile Include="Core\Exceptions\AuthException.cs" />
+    <Compile Include="Core\Exceptions\ExceptionExtensions.cs" />
+    <Compile Include="Core\Exceptions\NotConnectedException.cs" />
+    <Compile Include="Core\MVVM\Changeable.cs" />
+    <Compile Include="Core\MVVM\NotifyTaskCompletion.cs" />
+    <Compile Include="Core\MVVM\ViewModelBase.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="Core\Mapping\" />
+    <Folder Include="Core\Enum\" />
+    <Folder Include="Core\Async\" />
+    <Folder Include="Core\Security\" />
+    <Folder Include="Core\MVVM\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.IO">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\portable-net40+sl5+win8+wp8+wpa81\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\portable-net40+sl5+win8+wp8+wpa81\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\portable-net40+sl5+win8+wp8+wpa81\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\portable-net40+sl4+win8+wp71+wpa81\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\portable-net40+sl4+win8+wp71+wpa81\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\portable-net40+netcore45+sl5+wp8+wpa81\Nito.AsyncEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

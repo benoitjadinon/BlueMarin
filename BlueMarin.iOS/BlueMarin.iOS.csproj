@@ -36,10 +36,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="Helpers\" />
+    <Folder Include="Core\" />
+    <Folder Include="Core\UI\" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="Helpers\TableSource.cs" />
+    <Compile Include="Core\UI\TableSource.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\BlueMarin.PCL\BlueMarin.PCL.csproj">
+      <Project>{B7A248AF-C787-4F9D-BFAD-DF96C64F4E50}</Project>
+      <Name>BlueMarin.PCL</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
