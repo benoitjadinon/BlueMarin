@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Source\Bundle\BundleExtensions.cs" />
+    <Compile Include="Source\ObjectTypeHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -59,7 +60,7 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <Import Project="..\BlueMarin.Shared\BlueMarin.Shared.projitems" Label="Shared" Condition="Exists('..\BlueMarin.Shared\BlueMarin.Shared.projitems')" />
-  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\BlueMarin.PCL\BlueMarin.PCL.csproj">
       <Project>{B7A248AF-C787-4F9D-BFAD-DF96C64F4E50}</Project>

@@ -13,7 +13,7 @@ namespace BlueMarin
 {
 	public interface IOpenUrlService
 	{
-		void OpenUrl (string url, string mime = null);
+		void OpenUrl (string url, string mime = null, bool extra = false);
 	}
 
 	public class OpenUrlService : IOpenUrlService
@@ -28,14 +28,14 @@ namespace BlueMarin
 		}
 
 		#else
-		
+
 		public OpenUrlService ()
 		{			
 		}
 
 		#endif
 		
-		public void OpenUrl (string url, string mime = null)
+		public void OpenUrl (string url, string mime = null, bool extra = false)
 		{
 			if (!url.StartsWith ("http")) {
 				url = "http://" + url;
@@ -52,9 +52,20 @@ namespace BlueMarin
 
 			intent.AddFlags (ActivityFlags.NewTask);
 
-			mContext.StartActivity (intent);
-			//Intent chooser = Intent.CreateChooser (intent, "Open with");
-			//mContext.StartActivity(chooser);
+			if (extra){
+				Intent intent2 = new Intent (Intent.ActionView);
+				intent2.SetData (uri);
+				Intent[] intentArray =  { intent2 }; 
+				intent = Intent.CreateChooser (intent, "Open");
+				intent.PutExtra(Intent.ExtraInitialIntents, intentArray);
+			}
+
+			try {
+				mContext.StartActivity (intent);
+			} catch (Exception ex) {
+				Intent intent3 = new Intent (Intent.ActionView);
+				mContext.StartActivity (intent3);
+			}
 
 			#elif __IOS__
 
