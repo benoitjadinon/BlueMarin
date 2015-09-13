@@ -13,7 +13,7 @@ namespace BlueMarin
 {
 	public interface IOpenUrlService
 	{
-		void OpenUrlServiceAsync (string url);
+		void OpenUrl (string url, string mime = null);
 	}
 
 	public class OpenUrlService : IOpenUrlService
@@ -35,7 +35,7 @@ namespace BlueMarin
 
 		#endif
 		
-		public void OpenUrlServiceAsync (string url)
+		public void OpenUrl (string url, string mime = null)
 		{
 			if (!url.StartsWith ("http")) {
 				url = "http://" + url;
@@ -45,8 +45,13 @@ namespace BlueMarin
 
 			var uri = global::Android.Net.Uri.Parse (url);
 			Intent intent = new Intent (Intent.ActionView);
-			intent.SetData (uri);
+			if (mime != null)
+				intent.SetDataAndType (uri, mime);
+			else 
+				intent.SetData (uri);
+
 			intent.AddFlags (ActivityFlags.NewTask);
+
 			mContext.StartActivity (intent);
 			//Intent chooser = Intent.CreateChooser (intent, "Open with");
 			//mContext.StartActivity(chooser);
