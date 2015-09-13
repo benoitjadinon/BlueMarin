@@ -56,6 +56,7 @@
     <Compile Include="Source\Extensions\StringExtensions.cs" />
     <Compile Include="Source\Extensions\TypeExtensions.cs" />
     <Compile Include="Source\Async\LockWrapper.cs" />
+    <Compile Include="Source\MVVM\ObservableCollectionExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
