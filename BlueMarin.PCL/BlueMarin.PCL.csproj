@@ -8,10 +8,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>BlueMarin</RootNamespace>
     <AssemblyName>BlueMarin</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile158</TargetFrameworkProfile>
-    <ReleaseVersion>
-    </ReleaseVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,63 +31,40 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Core\Mapping\Mapper.cs" />
-    <Compile Include="Core\Enum\Symbol.cs" />
-    <Compile Include="Core\Enum\EnumValuesExtensions.cs" />
-    <Compile Include="Core\Enum\Enumeration.cs" />
-    <Compile Include="Core\LockWrapper.cs" />
-    <Compile Include="Core\Enum\IEnumerableExtensions.cs" />
-    <Compile Include="Core\Async\TaskWithTimeout.cs" />
-    <Compile Include="Core\Async\TaskExtensions.cs" />
-    <Compile Include="Core\Security\MD5Core.cs" />
-    <Compile Include="Core\MVVM\INotifyPropertyChangedExtensions.cs" />
-    <Compile Include="Core\ArrayExtensions.cs" />
-    <Compile Include="Core\DateTimeExtensions.cs" />
-    <Compile Include="Core\NumericExtensions.cs" />
-    <Compile Include="Core\StreamExtensions.cs" />
-    <Compile Include="Core\StringExtensions.cs" />
-    <Compile Include="Core\TypeExtensions.cs" />
-    <Compile Include="Core\GuidExtensions.cs" />
-    <Compile Include="Core\IntExtensions.cs" />
-    <Compile Include="Core\Maybe.cs" />
-    <Compile Include="Core\Exceptions\AuthException.cs" />
-    <Compile Include="Core\Exceptions\ExceptionExtensions.cs" />
-    <Compile Include="Core\Exceptions\NotConnectedException.cs" />
-    <Compile Include="Core\MVVM\Changeable.cs" />
-    <Compile Include="Core\MVVM\NotifyTaskCompletion.cs" />
-    <Compile Include="Core\MVVM\ViewModelBase.cs" />
+    <Compile Include="Source\Mapping\Mapper.cs" />
+    <Compile Include="Source\Enum\Symbol.cs" />
+    <Compile Include="Source\Enum\Enumeration.cs" />
+    <Compile Include="Source\Enum\IEnumerableExtensions.cs" />
+    <Compile Include="Source\Async\TaskExtensions.cs" />
+    <Compile Include="Source\Security\MD5Core.cs" />
+    <Compile Include="Source\MVVM\INotifyPropertyChangedExtensions.cs" />
+    <Compile Include="Source\Maybe.cs" />
+    <Compile Include="Source\Exceptions\AuthException.cs" />
+    <Compile Include="Source\Exceptions\ExceptionExtensions.cs" />
+    <Compile Include="Source\Exceptions\NotConnectedException.cs" />
+    <Compile Include="Source\MVVM\Changeable.cs" />
+    <Compile Include="Source\MVVM\NotifyTaskCompletion.cs" />
+    <Compile Include="Source\MVVM\ViewModelBase.cs" />
+    <Compile Include="Source\Enum\EnumExtensions.cs" />
+    <Compile Include="Source\IInitializable.cs" />
+    <Compile Include="Source\Extensions\ArrayExtensions.cs" />
+    <Compile Include="Source\Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Source\Extensions\GuidExtensions.cs" />
+    <Compile Include="Source\Extensions\IntExtensions.cs" />
+    <Compile Include="Source\Extensions\NumericExtensions.cs" />
+    <Compile Include="Source\Extensions\StreamExtensions.cs" />
+    <Compile Include="Source\Extensions\StringExtensions.cs" />
+    <Compile Include="Source\Extensions\TypeExtensions.cs" />
+    <Compile Include="Source\Async\LockWrapper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <ItemGroup>
-    <Folder Include="Core\" />
-    <Folder Include="Core\Mapping\" />
-    <Folder Include="Core\Enum\" />
-    <Folder Include="Core\Async\" />
-    <Folder Include="Core\Security\" />
-    <Folder Include="Core\MVVM\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.IO">
-      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\portable-net40+sl5+win8+wp8+wpa81\System.IO.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime">
-      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\portable-net40+sl5+win8+wp8+wpa81\System.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks">
-      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\portable-net40+sl5+win8+wp8+wpa81\System.Threading.Tasks.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Threading.Tasks">
-      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\portable-net40+sl4+win8+wp71+wpa81\Microsoft.Threading.Tasks.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Threading.Tasks.Extensions">
-      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\portable-net40+sl4+win8+wp71+wpa81\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Nito.AsyncEx">
-      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\portable-net40+netcore45+sl5+wp8+wpa81\Nito.AsyncEx.dll</HintPath>
-    </Reference>
+    <Folder Include="Source\" />
+    <Folder Include="Source\Mapping\" />
+    <Folder Include="Source\Enum\" />
+    <Folder Include="Source\Async\" />
+    <Folder Include="Source\Security\" />
+    <Folder Include="Source\MVVM\" />
+    <Folder Include="Source\Extensions\" />
   </ItemGroup>
 </Project>

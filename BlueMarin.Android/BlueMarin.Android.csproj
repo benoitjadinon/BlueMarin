@@ -44,19 +44,21 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
-    <Compile Include="Core\Bundle\BundleExtensions.cs" />
+    <Compile Include="Source\Bundle\BundleExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="packages.config" />
-    <None Include="Core\Bundle\README.md" />
+    <None Include="Source\Bundle\README.md" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
+  <Import Project="..\BlueMarin.Shared\BlueMarin.Shared.projitems" Label="Shared" Condition="Exists('..\BlueMarin.Shared\BlueMarin.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\BlueMarin.PCL\BlueMarin.PCL.csproj">
