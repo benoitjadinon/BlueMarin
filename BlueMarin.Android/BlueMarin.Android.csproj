@@ -50,6 +50,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Source\Bundle\BundleExtensions.cs" />
     <Compile Include="Source\ObjectTypeHelper.cs" />
+    <Compile Include="Source\Extensions\DisplayMetricsExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -66,5 +67,8 @@
       <Project>{B7A248AF-C787-4F9D-BFAD-DF96C64F4E50}</Project>
       <Name>BlueMarin.PCL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Source\Extensions\" />
   </ItemGroup>
 </Project>
