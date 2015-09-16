@@ -51,6 +51,7 @@
     <Compile Include="Source\Bundle\BundleExtensions.cs" />
     <Compile Include="Source\ObjectTypeHelper.cs" />
     <Compile Include="Source\Extensions\DisplayMetricsExtensions.cs" />
+    <Compile Include="Source\Application\LifeCycleLogger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -70,5 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Source\Extensions\" />
+    <Folder Include="Source\Application\" />
   </ItemGroup>
 </Project>
