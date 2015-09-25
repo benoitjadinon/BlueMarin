@@ -59,6 +59,8 @@
     <Compile Include="Source\MVVM\ObservableCollectionExtensions.cs" />
     <Compile Include="Source\Extensions\GenericExtensions.cs" />
     <Compile Include="Source\TODO.cs" />
+    <Compile Include="Source\Exceptions\ExceptionWrapper.cs" />
+    <Compile Include="Source\Helpers\DisposableBoolean.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -69,6 +71,7 @@
     <Folder Include="Source\Security\" />
     <Folder Include="Source\MVVM\" />
     <Folder Include="Source\Extensions\" />
+    <Folder Include="Source\Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
