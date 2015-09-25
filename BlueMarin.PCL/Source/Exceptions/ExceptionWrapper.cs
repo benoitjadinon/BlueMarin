@@ -16,16 +16,6 @@ namespace BlueMarin
 			}
 		}
 
-		public static T IgnoreException<T> (Action<T> action, bool print = true)
-		{
-			try {
-				action ();
-			} catch (Exception e) {
-				//ignore
-				Debug.WriteLine (e);
-			}
-		}
-
 		public static T IgnoreException<T> (Func<T> func, bool print = true)
 		{
 			try {
