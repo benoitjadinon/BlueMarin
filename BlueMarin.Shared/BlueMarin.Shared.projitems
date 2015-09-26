@@ -11,5 +11,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)OpenUrlService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Http\LoggingMessageHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TODO.cs" />
   </ItemGroup>
 </Project>

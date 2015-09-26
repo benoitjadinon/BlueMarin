@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Android.OS;
 
 #if __ANDROID__
+using Android.OS;
 using Android.Content;
 
 #elif __IOS__

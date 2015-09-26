@@ -58,7 +58,6 @@
     <Compile Include="Source\Async\LockWrapper.cs" />
     <Compile Include="Source\MVVM\ObservableCollectionExtensions.cs" />
     <Compile Include="Source\Extensions\GenericExtensions.cs" />
-    <Compile Include="Source\TODO.cs" />
     <Compile Include="Source\Exceptions\ExceptionWrapper.cs" />
     <Compile Include="Source\Helpers\DisposableBoolean.cs" />
   </ItemGroup>
