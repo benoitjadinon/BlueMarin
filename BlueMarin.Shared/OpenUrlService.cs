@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Android.OS;
 
 #if __ANDROID__
 using Android.Content;
@@ -63,6 +64,7 @@ namespace BlueMarin
 			try {
 				mContext.StartActivity (intent);
 			} catch (Exception ex) {
+				Console.WriteLine(ex.Message);
 				Intent intent3 = new Intent (Intent.ActionView);
 				mContext.StartActivity (intent3);
 			}
