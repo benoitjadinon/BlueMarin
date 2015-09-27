@@ -52,8 +52,8 @@
     <Compile Include="Source\ObjectTypeHelper.cs" />
     <Compile Include="Source\Extensions\DisplayMetricsExtensions.cs" />
     <Compile Include="Source\Application\LifeCycleLogger.cs" />
-    <Compile Include="Source\Extensions\ViewExtensions.cs" />
     <Compile Include="Source\Application\ListAdapter.cs" />
+    <Compile Include="Source\UI\ViewExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -74,5 +74,6 @@
   <ItemGroup>
     <Folder Include="Source\Extensions\" />
     <Folder Include="Source\Application\" />
+    <Folder Include="Source\UI\" />
   </ItemGroup>
 </Project>

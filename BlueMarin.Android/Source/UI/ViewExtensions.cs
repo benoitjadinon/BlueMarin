@@ -5,6 +5,15 @@ namespace BlueMarin.Android
 {
 	public static class ViewExtensions
 	{
+		public static void VisibilitySwap (this View @view, bool preferGoneToInvisible = true)
+		{
+			if (@view.Visibility == ViewStates.Visible)
+				@view.Visibility = (preferGoneToInvisible) ? ViewStates.Gone : ViewStates.Invisible;
+			else
+				@view.Visibility = ViewStates.Visible;
+		}
+
+		//usage : view.FindViewHolderById<TextView> (Resource.Id.text1).Text = "blah";
 		public static T FindViewHolderById<T> (this View @this, int resID)
 			where T : View
 		{
