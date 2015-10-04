@@ -271,3 +271,17 @@ public sealed class MD5Core
 		return result;
 	}
 }
+
+namespace BlueMarin
+{
+	public static class MD5StringExtensions
+	{
+		public static string ToMD5(this String @this)
+		{
+			if (@this == null)
+				return null;
+
+			return MD5Core.GetHashString (@this);
+		}
+	}
+}

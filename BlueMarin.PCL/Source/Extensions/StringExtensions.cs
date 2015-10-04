@@ -14,14 +14,6 @@ namespace BlueMarin
 			return @this.IsNullOrBlank ();
 		}
 
-		public static string ToMD5(this String @this)
-		{
-			if (@this == null)
-				return null;
-
-			return MD5Core.GetHashString (@this);
-		}
-
 		public static string OrEmpty(this String text)
 		{
 			return text ?? "";
@@ -33,7 +25,8 @@ namespace BlueMarin
 				return null;
 
 			var start = @this.IndexOf (startString) + startString.Length;
-			return @this.Substring (start, @this.IndexOf (endString, start) - start);
+			var nextOcc = @this.IndexOf (endString, start);
+			return @this.Substring (start, nextOcc - start);
 		}
 
 		public static string Reverse (this string @this)
@@ -47,4 +40,3 @@ namespace BlueMarin
 		}
 	}
 }
-

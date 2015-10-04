@@ -6,10 +6,10 @@ namespace BlueMarin
 {
 	public static class TypeExtensions
 	{
-		public static IEnumerable<Type> DoesNotContain (this IEnumerable<Type> types, string contains)
+		public static IEnumerable<Type> DoesNotContain (this IEnumerable<Type> types, string name)
 		{
 			return from x in types
-					where !x.Name.Contains(contains)
+				where !x.Name.Contains(name)
 				select x;
 		}
 	}
