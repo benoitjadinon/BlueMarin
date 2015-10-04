@@ -34,7 +34,6 @@
     <Compile Include="Source\Mapping\Mapper.cs" />
     <Compile Include="Source\Enum\Symbol.cs" />
     <Compile Include="Source\Enum\Enumeration.cs" />
-    <Compile Include="Source\Enum\IEnumerableExtensions.cs" />
     <Compile Include="Source\Async\TaskExtensions.cs" />
     <Compile Include="Source\Security\MD5Core.cs" />
     <Compile Include="Source\MVVM\INotifyPropertyChangedExtensions.cs" />
@@ -60,6 +59,10 @@
     <Compile Include="Source\Extensions\GenericExtensions.cs" />
     <Compile Include="Source\Exceptions\ExceptionWrapper.cs" />
     <Compile Include="Source\Helpers\DisposableBoolean.cs" />
+    <Compile Include="Source\Extensions\TimeSpanExtension.cs" />
+    <Compile Include="Source\Extensions\IEnumerableExtensions.cs" />
+    <Compile Include="Source\Helpers\DistanceHumanizer.cs" />
+    <Compile Include="Source\Extensions\LazyExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

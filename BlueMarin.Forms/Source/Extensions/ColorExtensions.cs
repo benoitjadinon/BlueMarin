@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace AMS.Core
+namespace BlueMarin
 {
 	public static class ColorExtensions
 	{

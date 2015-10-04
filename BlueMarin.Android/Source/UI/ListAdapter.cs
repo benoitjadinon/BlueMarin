@@ -1,14 +1,11 @@
-
 using System;
-
-using Android.Widget;
 using System.Collections.Generic;
 using System.Linq;
-using Android.Views;
 using System.Linq.Expressions;
 using Android.Content;
+using Android.Widget;
 
-namespace BeeGeez.Droid
+namespace BlueMarin.Android
 {
 	public abstract class ListAdapter<T, VH> : ArrayAdapter<T>
 		where VH : ViewHolder<T>
@@ -21,12 +18,12 @@ namespace BeeGeez.Droid
 			}
 		}
 
-		readonly Expression<Func<T, int>> uniqueIdProp;
+		//readonly Expression<Func<T, int>> uniqueIdProp;
 
 		protected ListAdapter (Context context, int layoutId, IEnumerable<T> list = null, Expression<Func<T, int>> uniqueIdProp = null, int tvId = default(int))
 			: base (context, layoutId, tvId > 0 ? tvId : global::Android.Resource.Id.Text1, list.ToList ())
 		{
-			this.uniqueIdProp = uniqueIdProp;
+			//this.uniqueIdProp = uniqueIdProp;
 		}
 
 		/*

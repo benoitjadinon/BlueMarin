@@ -52,8 +52,11 @@
     <Compile Include="Source\ObjectTypeHelper.cs" />
     <Compile Include="Source\Extensions\DisplayMetricsExtensions.cs" />
     <Compile Include="Source\Application\LifeCycleLogger.cs" />
-    <Compile Include="Source\Application\ListAdapter.cs" />
     <Compile Include="Source\UI\ViewExtensions.cs" />
+    <Compile Include="Source\Extensions\JavaObjectExtensions.cs" />
+    <Compile Include="Source\Extensions\ColorExtensions.cs" />
+    <Compile Include="Source\UI\ListAdapter.cs" />
+    <Compile Include="Source\Application\ActivityLifecycleCallbacks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

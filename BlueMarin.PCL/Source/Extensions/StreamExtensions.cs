@@ -18,6 +18,14 @@ namespace BlueMarin
 				return ms.ToArray();
 			}
 		}
+
+		public static byte[] AsBytes (this Stream stream)
+		{
+			using (MemoryStream ms = new MemoryStream ()) {
+				stream.CopyTo (ms);
+				return ms.ToArray ();
+			}
+		}
 	}
 }
 

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Microsoft.CSharp.RuntimeBinder;
 using System.Reflection;
 
-namespace AMS.Core
+namespace BlueMarin
 {
 	/*
 	public class PropertyBinding
