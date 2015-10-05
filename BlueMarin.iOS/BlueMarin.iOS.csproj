@@ -42,10 +42,15 @@
     <Folder Include="Resources\" />
     <Folder Include="Source\" />
     <Folder Include="Source\UI\" />
+    <Folder Include="Source\Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Source\UI\TableSource.cs" />
     <Compile Include="Source\DoNotRemove.cs" />
+    <Compile Include="Source\UI\UITableViewExtensions.cs" />
+    <Compile Include="Source\UI\UIImageExtensions.cs" />
+    <Compile Include="Source\Helpers\iOSHelpers.cs" />
+    <Compile Include="Source\Helpers\UIColorHelpers.cs" />
   </ItemGroup>
   <Import Project="..\BlueMarin.Shared\BlueMarin.Shared.projitems" Label="Shared" Condition="Exists('..\BlueMarin.Shared\BlueMarin.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

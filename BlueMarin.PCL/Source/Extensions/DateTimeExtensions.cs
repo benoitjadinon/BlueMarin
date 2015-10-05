@@ -63,6 +63,13 @@ namespace BlueMarin
 			var now = DateTime.Now;
 			return dateTime.ChangeTime(now.Hour, now.Minute, now.Second, now.Millisecond, kind);
 		}
+
+		// https://gist.github.com/kpespisa/e87059db1de761690b70
+		public static double ToUnixTime(this DateTime date)
+		{
+			TimeSpan diff = date - DateTimeHelper.EpochTime;
+			return Math.Floor(diff.TotalSeconds);
+		}
 	}
 }
 

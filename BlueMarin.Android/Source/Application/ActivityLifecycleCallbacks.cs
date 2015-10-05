@@ -26,7 +26,7 @@ namespace BlueMarin.Android
 			}
 		}
 
-		ActivityState CurrentActivityState = ActivityState.None;
+		public ActivityState CurrentActivityState { get; protected set; } = ActivityState.None;
 
 		#region Application.IActivityLifecycleCallbacks
 

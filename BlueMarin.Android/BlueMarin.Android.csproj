@@ -43,13 +43,12 @@
     <Reference Include="Mono.Android" />
     <Reference Include="System.Net.Http" />
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Source\Bundle\BundleExtensions.cs" />
-    <Compile Include="Source\ObjectTypeHelper.cs" />
     <Compile Include="Source\Extensions\DisplayMetricsExtensions.cs" />
     <Compile Include="Source\Application\LifeCycleLogger.cs" />
     <Compile Include="Source\UI\ViewExtensions.cs" />
@@ -57,6 +56,8 @@
     <Compile Include="Source\Extensions\ColorExtensions.cs" />
     <Compile Include="Source\UI\ListAdapter.cs" />
     <Compile Include="Source\Application\ActivityLifecycleCallbacks.cs" />
+    <Compile Include="Source\UI\ObservableCollectionAdapter.cs" />
+    <Compile Include="Source\Application\BaseResultActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -8,9 +8,11 @@ namespace BlueMarin.iOS
 	// when there's async Tasks stuff in the PCL lib but none yet in the project itself
 	public class EmptyClass
 	{
+		#pragma warning disable 1998
 		public async Task DoNotRemove ()
 		{
 		}
+		#pragma warning restore 1998
 	}
 }
 

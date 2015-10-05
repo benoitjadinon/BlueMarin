@@ -37,7 +37,6 @@
     <Compile Include="Source\Async\TaskExtensions.cs" />
     <Compile Include="Source\Security\MD5Core.cs" />
     <Compile Include="Source\MVVM\INotifyPropertyChangedExtensions.cs" />
-    <Compile Include="Source\Maybe.cs" />
     <Compile Include="Source\Exceptions\AuthException.cs" />
     <Compile Include="Source\Exceptions\ExceptionExtensions.cs" />
     <Compile Include="Source\Exceptions\NotConnectedException.cs" />
@@ -63,6 +62,9 @@
     <Compile Include="Source\Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Source\Helpers\DistanceHumanizer.cs" />
     <Compile Include="Source\Extensions\LazyExtensions.cs" />
+    <Compile Include="Source\Helpers\DateTimeHelper.cs" />
+    <Compile Include="Source\Extensions\ObjectExtensions.cs" />
+    <Compile Include="Source\Extensions\DictionnaryExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
