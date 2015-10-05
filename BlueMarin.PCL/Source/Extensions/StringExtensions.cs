@@ -16,7 +16,12 @@ namespace BlueMarin
 
 		public static string OrEmpty(this String text)
 		{
-			return text ?? "";
+			return text.Or ();
+		}
+
+		public static string Or(this String text, string replacement = "")
+		{
+			return text ?? replacement;
 		}
 
 		public static string Substring (this string @this, string startString, string endString)
