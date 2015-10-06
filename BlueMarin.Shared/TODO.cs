@@ -34,7 +34,7 @@ namespace BlueMarin
 			#elif DEBUG
 			System.Diagnostics.Debug.WriteLine(whatsLeftToDo);
 			#else
-			System.Console.WriteLine (whatsLeftToDo);
+			//Console.WriteLine (whatsLeftToDo);
 			#endif
 		}
 	}

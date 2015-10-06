@@ -5,10 +5,10 @@ using System.Collections.Specialized;
 using System.Collections.Generic;
 using System.Linq;
 using Android.Views;
-using Android.Content;
 
 namespace BlueMarin.Android
 {
+	/// <seealso cref="ObservableCollectionAdapter" /> 
 	public abstract class ObservableCollectionRecyclerViewAdapter<T, VH> : RecyclerView.Adapter
 		where VH : BindableViewHolder<T>
 	{
@@ -24,13 +24,17 @@ namespace BlueMarin.Android
 
 		private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e) 
 		{
+			//TODO: more precise : this.NotifyItemRangeChanged, ...
 			this.NotifyDataSetChanged();
 		}
 
+		//TODO, see ObservableCollectionAdapter
+		/*
 		private void OnItemChanged(object sender, EventArgs e) 
 		{
-			this.NotifyDataSetChanged();
+			this.NotifyItemChanged(e.
 		}
+		*/
 
 		public T this[int index] 
 		{
@@ -46,7 +50,7 @@ namespace BlueMarin.Android
 
 		public override RecyclerView.ViewHolder OnCreateViewHolder (ViewGroup parent, int viewType)
 		{
-			return OnCreate (LayoutInflater.From (parent.Context), parent, viewType);
+			return CreateViewHolder (LayoutInflater.From (parent.Context), parent, viewType);
 		}
 
 		public override void OnBindViewHolder (RecyclerView.ViewHolder holder, int position)
@@ -56,7 +60,7 @@ namespace BlueMarin.Android
 
 		#endregion
 
-		protected abstract VH OnCreate (LayoutInflater inflater, ViewGroup parent, int viewType);
+		protected abstract VH CreateViewHolder (LayoutInflater inflater, ViewGroup parent, int viewType);
 
 
 		public void UpdateList (IEnumerable<T> items)
@@ -66,7 +70,7 @@ namespace BlueMarin.Android
 			AddAll (items);
 		}
 
-		public void AddAll (IEnumerable<T> newItems)
+		public void AddAll (IEnumerable<T> newItems/*TODO: int atPosition*/)
 		{
 			var startAt = this.items.Count;
 			var numVideosReceived = newItems.Count();
@@ -90,14 +94,24 @@ namespace BlueMarin.Android
 		#endregion
 	}
 
-	public abstract class BindableViewHolder<T> : RecyclerView.ViewHolder
+
+	public abstract class BindableViewHolder<T> : RecyclerView.ViewHolder, BindableItem<T>
 	{
 		protected BindableViewHolder (View itemView)
 			:base(itemView)
 		{			
 		}
 
+		#region BindableItem<T>
+
 		public abstract void Bind (T item, int index, int totalItems);
+
+		#endregion
+	}
+
+	public interface BindableItem<T>
+	{
+		void Bind (T item, int index, int totalItems);
 	}
 }
 
