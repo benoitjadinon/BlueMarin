@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+
+#if __ANDROID__ || __iOS__
 using System.Reflection;
 
 namespace BlueMarin
@@ -36,3 +38,4 @@ namespace BlueMarin
 	}
 }
 
+#endif

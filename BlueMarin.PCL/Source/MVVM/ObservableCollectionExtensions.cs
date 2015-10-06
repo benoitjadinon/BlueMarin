@@ -6,18 +6,19 @@ namespace BlueMarin
 {
 	public static class ObservableCollectionExtensions
 	{
-		public static ObservableCollection<T> ReplaceAll<T> (this ObservableCollection<T> coll, IList<T> list)
+		public static ObservableCollection<T> ReplaceAll<T> (this ObservableCollection<T> @this, IEnumerable<T> list)
 		{
-			coll.Clear ();
-			coll.AddAll (list);
-			return coll;
+			@this.Clear ();
+			@this.AddAll (list);
+			return @this;
 		}
-		public static ObservableCollection<T> AddAll<T> (this ObservableCollection<T> coll, IList<T> list)
+
+		public static ObservableCollection<T> AddAll<T> (this ObservableCollection<T> @this, IEnumerable<T> list)
 		{
 			foreach (T item in list) {
-				coll.Add (item);
+				@this.Add (item);
 			}
-			return coll;
+			return @this;
 		}
 	}
 }

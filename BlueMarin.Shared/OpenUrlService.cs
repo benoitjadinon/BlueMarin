@@ -2,9 +2,10 @@
 using System.Threading.Tasks;
 
 #if __ANDROID__
+using Android.App;
 using Android.OS;
 using Android.Content;
-
+using Android.Util;
 #elif __IOS__
 using UIKit;
 using Foundation;
@@ -12,11 +13,6 @@ using Foundation;
 
 namespace BlueMarin
 {
-	public interface IOpenUrlService
-	{
-		void OpenUrl (string url, string mime = null, bool extra = false);
-	}
-
 	public class OpenUrlService : IOpenUrlService
 	{
 		#if __ANDROID__
@@ -28,10 +24,9 @@ namespace BlueMarin
 			this.mContext = context;		
 		}
 
-		#else
-
 		public OpenUrlService ()
-		{			
+		{		
+			this.mContext = Application.Context;	
 		}
 
 		#endif
@@ -64,10 +59,14 @@ namespace BlueMarin
 			try {
 				mContext.StartActivity (intent);
 			} catch (Exception ex) {
-				Console.WriteLine(ex.Message);
-				Intent intent3 = new Intent (Intent.ActionView);
-				mContext.StartActivity (intent3);
-			}
+				try {
+					Console.WriteLine(ex.Message);
+					Intent intent3 = new Intent (Intent.ActionView);
+					mContext.StartActivity (intent3);
+				} catch (Exception e) {
+					Log.Error ("cannot open link ", ex.Message);
+				}
+			} 
 
 			#elif __IOS__
 
