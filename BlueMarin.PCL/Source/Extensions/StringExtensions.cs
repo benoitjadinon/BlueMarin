@@ -1,29 +1,30 @@
 using System;
+using System.Text;
+using static System.Text.Encoding;
 
 namespace BlueMarin
 {
 	public static class StringExtensions
 	{
-		public static bool IsNullOrBlank(this String @this)
+		[Obsolete("use IsEmpty instead")]
+		public static bool IsNullOrBlank (this String @this) => @this.IsEmpty ();
+
+		//https://github.com/praeclarum/Praeclarum/blob/master/Praeclarum/StringHelper.cs
+		public static bool IsEmpty (this String @this)
 		{
-			return @this == null || @this.Trim().Length == 0 || @this == "";
+			if (@this == null) return true;
+			var len = @this.Length;
+			if (len == 0) return true;
+			for (var i = 0; i < len; i++)
+				if (!char.IsWhiteSpace (@this[i]))
+					return false;
+			return true;
 		}
 
-		public static bool IsEmpty(this String @this)
-		{
-			return @this.IsNullOrBlank ();
-		}
+		public static string OrEmpty (this String text) => text.Or ();
 
-		public static string OrEmpty(this String text)
-		{
-			return text.Or ();
-		}
-
-		public static string Or(this String text, string replacement = "")
-		{
-			return text ?? replacement;
-		}
-
+		public static string Or (this String text, string replacement = "") => text ?? replacement;
+	
 		public static string Substring (this string @this, string startString, string endString)
 		{
 			if (@this == null)
@@ -44,10 +45,6 @@ namespace BlueMarin
 			return new string( charArray );
 		}
 
-		public static string ToBase64 (this string plainText)
-		{
-			var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
-			return System.Convert.ToBase64String(plainTextBytes);
-		}
+		public static string ToBase64 (this string plainText) => Convert.ToBase64String(UTF8.GetBytes(plainText));
 	}
 }
