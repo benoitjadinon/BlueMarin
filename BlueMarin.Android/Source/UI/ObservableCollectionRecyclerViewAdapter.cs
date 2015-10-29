@@ -9,8 +9,7 @@ using Android.Views;
 namespace BlueMarin.Android
 {
 	/// <seealso cref="ObservableCollectionAdapter" /> 
-	public abstract class ObservableCollectionRecyclerViewAdapter<T, VH> : RecyclerView.Adapter
-		where VH : BindableViewHolder<T>
+	public abstract class ObservableCollectionRecyclerViewAdapter<T> : RecyclerView.Adapter
 	{
 		protected readonly ObservableCollection<T> items;
 
@@ -55,12 +54,12 @@ namespace BlueMarin.Android
 
 		public override void OnBindViewHolder (RecyclerView.ViewHolder holder, int position)
 		{
-			(holder as VH).Bind (items.ElementAt (position), position, this.ItemCount);
+			(holder as BindableViewHolder<T>).Bind (items.ElementAt (position), position, this.ItemCount);
 		}
 
 		#endregion
 
-		protected abstract VH CreateViewHolder (LayoutInflater inflater, ViewGroup parent, int viewType);
+		protected abstract BindableViewHolder<T> CreateViewHolder (LayoutInflater inflater, ViewGroup parent, int viewType);
 
 
 		public void UpdateList (IEnumerable<T> items)
