@@ -65,7 +65,6 @@
     <Compile Include="Source\Helpers\DateTimeHelper.cs" />
     <Compile Include="Source\Extensions\ObjectExtensions.cs" />
     <Compile Include="Source\Extensions\DictionnaryExtensions.cs" />
-    <Compile Include="IOpenUrlService.cs" />
     <Compile Include="Source\Extensions\MaybeExtensions.cs" />
     <Compile Include="Source\Extensions\DelegateExtensions.cs" />
   </ItemGroup>
