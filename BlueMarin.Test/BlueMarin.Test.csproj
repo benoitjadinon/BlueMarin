@@ -35,6 +35,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Source\Enum\TestEnumeration.cs" />
+    <Compile Include="Source\Helpers\DisposableBooleanTest.cs" />
+    <Compile Include="Source\Extensions\TestCurry.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -49,5 +51,7 @@
   <ItemGroup>
     <Folder Include="Source\" />
     <Folder Include="Source\Enum\" />
+    <Folder Include="Source\Helpers\" />
+    <Folder Include="Source\Extensions\" />
   </ItemGroup>
 </Project>

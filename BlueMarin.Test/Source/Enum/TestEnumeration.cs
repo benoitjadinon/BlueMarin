@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using System;
 using BlueMarin;
 using System.Diagnostics;
 
@@ -8,8 +7,6 @@ namespace BlueMarin.Test
 	[TestFixture ()]
 	public class TestEnumeration
 	{
-		
-		
 		[Test]
 		public void TestNotEqual ()
 		{
