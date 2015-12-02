@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using System.Diagnostics;
 using System.Threading;
 using System.Net.Http;
 
@@ -13,23 +12,38 @@ namespace BlueMarin
 
 		protected override async Task<HttpResponseMessage> SendAsync (HttpRequestMessage request, CancellationToken cancellationToken)
 		{
-			Debug.WriteLine ("REQUEST:");
-			Debug.WriteLine (request.ToString ());
-			if (request.Content != null) {
-				Debug.WriteLine (await request.Content.ReadAsStringAsync ());
-			}
+			PrintRequest (request);
 
 			var response = await base.SendAsync (request, cancellationToken);
 
-			Debug.WriteLine ("RESPONSE:");
-			Debug.WriteLine (response.ToString ());
-			if (response.Content != null) {
-				var respBody = await response.Content.ReadAsStringAsync ();
-				Debug.WriteLine (respBody.Substring (0, Math.Min (MaxBodyLength, respBody.Length)) + (respBody.Length >= MaxBodyLength ? "(...)" : ""));
-			}
+			PrintResponse (response);
 
 			return response;
 		}
+
+		public static async Task PrintRequest(HttpRequestMessage request){
+			Debug ("REQUEST:");
+			Debug (request.ToString ());
+			if (request.Content != null) {
+				Debug (await request.Content.ReadAsStringAsync ());
+			}
+		}
+
+		public static async Task PrintResponse (HttpResponseMessage response)
+		{
+			Debug ("RESPONSE:");
+			Debug (response.ToString ());
+			if (response.Content != null) {
+				var respBody = await response.Content.ReadAsStringAsync ();
+				Debug (respBody.Substring (0, Math.Min (MaxBodyLength, respBody.Length)) + (respBody.Length >= MaxBodyLength ? "(...)" : ""));
+			}
+		}
+
+		//https://bugzilla.xamarin.com/show_bug.cgi?id=13538
+		[System.Diagnostics.Conditional("DEBUG")]
+		public static void Debug(string text)
+		{
+			System.Diagnostics.Debug.WriteLine(text);
+		}
 	}
 }
-
