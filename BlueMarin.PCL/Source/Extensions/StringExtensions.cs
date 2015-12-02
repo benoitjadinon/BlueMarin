@@ -45,6 +45,6 @@ namespace BlueMarin
 			return new string( charArray );
 		}
 
-		public static string ToBase64 (this string plainText) => Convert.ToBase64String(UTF8.GetBytes(plainText));
+		public static string ToBase64 (this string plainText) => System.Convert.ToBase64String(UTF8.GetBytes(plainText));
 	}
 }
