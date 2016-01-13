@@ -8,7 +8,7 @@ namespace BlueMarin
 		/// <summary>
 		/// Convert to Radians.
 		/// </summary>
-		/// <param name="val">The value to convert to radians</param>
+		/// <param name="angle">The value to convert to radians</param>
 		/// <returns>The value in radians</returns>
 		public static double DegreesToRadians(this double angle)
 		{

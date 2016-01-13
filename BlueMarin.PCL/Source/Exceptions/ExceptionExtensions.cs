@@ -11,12 +11,12 @@ namespace BlueMarin
 
 			string info = "";
 
-			if (ex.Message.IsNullOrBlank ())
+			if (ex.Message.IsEmpty ())
 				info += "exception message is empty\n";
 			else
 				info += ex.Message.Substring (0, Math.Min(ex.Message.Length, 150));
 
-			if (showStack && !ex.StackTrace.IsNullOrBlank ())
+			if (showStack && !ex.StackTrace.IsEmpty ())
 				info += ex.StackTrace.Substring (0, Math.Min (ex.StackTrace.Length, 150));
 
 			return info;

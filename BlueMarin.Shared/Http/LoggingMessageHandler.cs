@@ -12,11 +12,11 @@ namespace BlueMarin
 
 		protected override async Task<HttpResponseMessage> SendAsync (HttpRequestMessage request, CancellationToken cancellationToken)
 		{
-			PrintRequest (request);
+			await PrintRequest (request);
 
 			var response = await base.SendAsync (request, cancellationToken);
 
-			PrintResponse (response);
+			await PrintResponse (response);
 
 			return response;
 		}

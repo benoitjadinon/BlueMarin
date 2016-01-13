@@ -63,7 +63,7 @@ namespace BlueMarin
 					Console.WriteLine(ex.Message);
 					Intent intent3 = new Intent (Intent.ActionView);
 					mContext.StartActivity (intent3);
-				} catch (Exception e) {
+				} catch (Exception) {
 					Log.Error ("cannot open link ", ex.Message);
 				}
 			} 
