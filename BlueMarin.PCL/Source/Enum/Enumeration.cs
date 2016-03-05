@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace BlueMarin
 {
+	//TODO: compare with https://github.com/HeadspringLabs/Tarantino/blob/master/src/Tarantino.Core/Commons/Model/Enumerations/Enumeration.cs
+	// https://lostechies.com/jimmybogard/2008/08/12/enumeration-classes/
+	//TODO: make thread safe
+	//TODO: make serializable !!! this is not, and very dangerous
 	public abstract class Enumeration : IComparable
 	{
-		//TODO: make thread safe
 		private static int autovalue = 0;
-
 
 		protected Enumeration ()
 		{
