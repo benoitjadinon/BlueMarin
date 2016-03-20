@@ -67,6 +67,7 @@
     <Compile Include="Source\Extensions\DictionnaryExtensions.cs" />
     <Compile Include="Source\Extensions\MaybeExtensions.cs" />
     <Compile Include="Source\Extensions\DelegateExtensions.cs" />
+    <Compile Include="Source\Async\TaskToObservable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
