@@ -1,22 +1,12 @@
 ﻿using System;
-using System.Threading.Tasks;
-
-#if __ANDROID__
 using Android.App;
-using Android.OS;
 using Android.Content;
 using Android.Util;
-#elif __IOS__
-using UIKit;
-using Foundation;
-#endif
 
-namespace BlueMarin
+namespace BlueMarin.Android
 {
 	public class OpenUrlService : IOpenUrlService
 	{
-		#if __ANDROID__
-
 		readonly Context mContext;
 
 		public OpenUrlService (Context context)
@@ -29,15 +19,11 @@ namespace BlueMarin
 			this.mContext = Application.Context;	
 		}
 
-		#endif
-		
 		public void OpenUrl (string url, string mime = null, bool extra = false)
 		{
-			if (!url.StartsWith ("http")) {
+			if (!url.Contains (":/")) {
 				url = "http://" + url;
 			}
-
-			#if __ANDROID__
 
 			var uri = global::Android.Net.Uri.Parse (url);
 			Intent intent = new Intent (Intent.ActionView);
@@ -62,20 +48,12 @@ namespace BlueMarin
 				try {
 					Console.WriteLine(ex.Message);
 					Intent intent3 = new Intent (Intent.ActionView);
+					intent3.SetFlags(ActivityFlags.NewTask);
 					mContext.StartActivity (intent3);
 				} catch (Exception) {
 					Log.Error ("cannot open link ", ex.Message);
 				}
 			} 
-
-			#elif __IOS__
-
-			var nsUrl = new NSUrl(url);
-			if (UIApplication.SharedApplication.CanOpenUrl(nsUrl))
-				UIApplication.SharedApplication.OpenUrl(nsUrl);
-
-			#endif
 		}
 	}
 }
-

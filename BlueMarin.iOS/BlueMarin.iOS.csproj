@@ -52,6 +52,7 @@
     <Compile Include="Source\UI\UIImageExtensions.cs" />
     <Compile Include="Source\Helpers\iOSHelpers.cs" />
     <Compile Include="Source\Helpers\UIColorHelpers.cs" />
+    <Compile Include="Source\OpenUrlService.cs" />
   </ItemGroup>
   <Import Project="..\BlueMarin.Shared\BlueMarin.Shared.projitems" Label="Shared" Condition="Exists('..\BlueMarin.Shared\BlueMarin.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

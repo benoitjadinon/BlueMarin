@@ -69,6 +69,7 @@
     <Compile Include="Source\Application\BaseResultActivity.cs" />
     <Compile Include="Source\UI\RecyclerViewOnScrollListener.cs" />
     <Compile Include="Source\UI\ObservableCollectionRecyclerViewAdapter.cs" />
+    <Compile Include="Source\OpenUrlService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

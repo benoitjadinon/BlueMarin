@@ -9,10 +9,8 @@
     <Import_RootNamespace>BlueMarin</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)OpenUrlService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Http\LoggingMessageHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TODO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EnumExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IOpenUrlService.cs" />
   </ItemGroup>
 </Project>
