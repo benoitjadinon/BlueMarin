@@ -30,8 +30,13 @@ namespace BlueMarin
 			if (@this == null)
 				return null;
 
-			var start = @this.IndexOf (startString) + startString.Length;
+			var start = @this.IndexOf (startString);
+			if (start == -1)
+				return null;
+			start += startString.Length;
 			var nextOcc = @this.IndexOf (endString, start);
+			if (nextOcc == -1)
+				return null;
 			return @this.Substring (start, nextOcc - start);
 		}
 
