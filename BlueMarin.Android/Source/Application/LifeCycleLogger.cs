@@ -49,5 +49,13 @@ namespace BlueMarin.Android
 
 		#endregion IActivityLifecycleCallbacks
 	}
+
+	public static class LifeCycleLoggerExtensions
+	{
+		public static void LogActivitiesLifecycle(this Application @this)
+		{
+			@this.RegisterActivityLifecycleCallbacks(new LifeCycleLogger());
+		}
+	}
 }
 
