@@ -69,6 +69,7 @@
     <Compile Include="Source\Extensions\DelegateExtensions.cs" />
     <Compile Include="Source\Async\TaskToObservable.cs" />
     <Compile Include="Source\IOpenUrlService.cs" />
+    <Compile Include="Source\Helpers\TimerPCL.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
