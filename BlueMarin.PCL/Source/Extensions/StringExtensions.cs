@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using static System.Text.Encoding;
+using System.Linq;
 
 namespace BlueMarin
 {
@@ -30,11 +31,11 @@ namespace BlueMarin
 			if (@this == null)
 				return null;
 
-			var start = @this.IndexOf (startString);
+			var start = @this.IndexOf (startString, StringComparison.CurrentCulture);
 			if (start == -1)
 				return null;
 			start += startString.Length;
-			var nextOcc = @this.IndexOf (endString, start);
+			var nextOcc = @this.IndexOf (endString, start, StringComparison.CurrentCulture);
 			if (nextOcc == -1)
 				return null;
 			return @this.Substring (start, nextOcc - start);
