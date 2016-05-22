@@ -52,9 +52,8 @@ namespace BlueMarin.Rx
 		public static IObservable<T> Log<T>(this IObservable<T> stream)
 		{
 			return stream.Materialize ()
-				.Do (Debug.WriteLine)
+				.Do (d => Debug.WriteLine(d))
 				.Dematerialize();
 		}
 	}
 }
-

@@ -34,6 +34,7 @@
     <Compile Include="Sources\RxDebugObserver.cs" />
     <Compile Include="Sources\Extensions\Rx\MaterializeExtensions.cs" />
     <Compile Include="Sources\Extensions\Rx\RxExtensions.cs" />
+    <Compile Include="Sources\Extensions\Rx\ModelExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
