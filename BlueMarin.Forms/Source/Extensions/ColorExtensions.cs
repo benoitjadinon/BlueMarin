@@ -9,15 +9,15 @@ namespace BlueMarin
 
 		public static Color RandomDebugColor (this Color color)
 		{
-			return RandomDebugColor();
+			return GetRandomDebugColor(color);
 		}
-		public static Color RandomDebugColor ()
+		public static Color GetRandomDebugColor (Color fallback)
 		{
-			#if DEBUG
+#if DEBUG
 			return Color.FromRgb(randonGen.Next(255), randonGen.Next(255), randonGen.Next(255));
 			#else
-			return Color.Default;
-			#endif
+			return fallback;
+#endif
 		}
 	}
 }
