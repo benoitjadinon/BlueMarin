@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq.Expressions;
-
-namespace BlueMarin
+﻿namespace BlueMarin
 {
 	// http://www.uglybugger.org/software/post/friends_dont_let_friends_use_automapper
 

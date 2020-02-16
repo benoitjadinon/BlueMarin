@@ -28,7 +28,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 
 //http://www.codeproject.com/Articles/34753/Symbols-as-extensible-enums
 namespace BlueMarin

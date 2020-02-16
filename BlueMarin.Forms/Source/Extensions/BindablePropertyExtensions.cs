@@ -2,9 +2,6 @@
 using Xamarin.Forms;
 using System.Linq.Expressions;
 using System.ComponentModel;
-using System.Collections.Generic;
-using Microsoft.CSharp.RuntimeBinder;
-using System.Reflection;
 
 namespace BlueMarin
 {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BlueMarin
+﻿namespace BlueMarin
 {
 	public static class ObjectExtensions
 	{
